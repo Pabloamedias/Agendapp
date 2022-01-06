@@ -31,6 +31,7 @@
               autocomplete="off"
               data-form-input
             />
+            <input type="datetime-local" data-form-date placeholder="DD/MM/AAAA"> <!--Input que nos ayuda a ingresar fechas/ PlaceHolder es el texto que aparece como sugerencia en el input-->
             <button type="submit" class="btnCreate" data-form-btn>
               Agregar <i class="fas fa-plus-circle"></i>
             </button>
@@ -40,6 +41,8 @@
         </ul>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Importamos la libería moment para poder trabajar con otro formato de fechas-->
     <script type="module" src="script.js"></script>
   </body>
 </html>
