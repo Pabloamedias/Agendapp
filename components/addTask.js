@@ -20,12 +20,16 @@ export const addTask = (evento) => {
     
   }
 
+  const complete = false;
+
   input.value = '';
   calendar.value = '';
 
   const taskObj = {
     value,
     dateFormat,
+    complete,
+    id: uuid.v4(),
   };
   //creamos un objeto que almacenara los valores de la tarea y la fecha
 
@@ -44,16 +48,27 @@ export const addTask = (evento) => {
 
 };
 
-export const createTask = ({ value, dateFormat }) => {
+export const createTask = ({ value, dateFormat, complete, id }) => {
   const task = document.createElement('li');
   task.classList.add('card');
 
   const taskContent = document.createElement('div');
 
+  const check = checkComplete(id)
+
+
+  //La aplicacion lee el parametro de complete, en caso de ser true, se encarga de llenar con las clases css para cambiar el estilo
+  if(complete){
+    check.classList.toggle('fas');
+    check.classList.toggle('completeIcon');
+    check.classList.toggle('far');
+     
+  }
+
   const titleTask = document.createElement('span'); //Creamos un elemento span
   titleTask.classList.add('task');
   titleTask.innerText = value;
-  taskContent.appendChild(checkComplete());
+  taskContent.appendChild(check);
   taskContent.appendChild(titleTask);
 
   const dateElement = document.createElement('span');
@@ -61,7 +76,7 @@ export const createTask = ({ value, dateFormat }) => {
 
   task.appendChild(taskContent);
   task.appendChild(dateElement);
-  task.appendChild(deleteIcon());
+  task.appendChild(deleteIcon(id));
   
   return task;
 };
