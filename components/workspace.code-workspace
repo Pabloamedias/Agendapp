@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\Proyecto CRUD"
+		},
+		{
+			"path": "..\\..\\1842-html-validaciones-proyecto_inicial"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Agendapp"
+	}
+}
